@@ -1,0 +1,79 @@
+services:
+  exemplohealthchecks:
+    build:
+      context: C:\_estudos\ExemploHealthChecks
+      dockerfile: ExemploHealthChecks/Dockerfile
+      target: base
+    depends_on:
+    - nosql.server
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: exemplohealthchecks:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  bin/Debug/netcoreapp2.2/ExemploHealthChecks.dll'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/bash -c "if PID=$$(pidof
+        -x dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 5555
+      target: 80
+    volumes:
+    - C:\_estudos\ExemploHealthChecks\ExemploHealthChecks:/app:rw
+    - C:\Users\U002647\vsdbg\vs2017u5:/remote_debugger:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - C:\Users\U002647\.nuget\packages:/root/.nuget/packages:ro
+  exemplohealthchecks2:
+    build:
+      context: C:\_estudos\ExemploHealthChecks
+      dockerfile: ExemploHealthChecks2/Dockerfile
+      target: base
+    depends_on:
+    - nosql.server
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: exemplohealthchecks2:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  bin/Debug/netcoreapp2.2/ExemploHealthChecks2.dll'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/bash -c "if PID=$$(pidof
+        -x dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 6666
+      target: 80
+    volumes:
+    - C:\_estudos\ExemploHealthChecks\ExemploHealthChecks2:/app:rw
+    - C:\Users\U002647\vsdbg\vs2017u5:/remote_debugger:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - C:\Users\U002647\.nuget\packages:/root/.nuget/packages:ro
+  kafka:
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_CREATE_TOPICS: fila_pedido:1:1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    image: wurstmeister/kafka:0.10.2.0
+    ports:
+    - published: 9092
+      target: 9092
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock:rw
+  nosql.server:
+    image: mongo
+    ports:
+    - published: 17017
+      target: 27017
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+    - published: 2181
+      target: 2181
+version: '3.4'

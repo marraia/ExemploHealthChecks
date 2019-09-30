@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  exemplohealthchecks:
+    image: exemplohealthchecks
+    build:
+      context: .
+      dockerfile: ExemploHealthChecks/Dockerfile
+
+  exemplohealthchecks2:
+    image: exemplohealthchecks2
+    build:
+      context: .
+      dockerfile: ExemploHealthChecks2/Dockerfile

@@ -1,0 +1,14 @@
+C:\_estudos\ExemploHealthChecks\ExemploHealthChecks\obj\Debug\netcoreapp2.2\ExemploHealthChecks.csproj.CoreCompileInputs.cache
+C:\_estudos\ExemploHealthChecks\ExemploHealthChecks\obj\Debug\netcoreapp2.2\ExemploHealthChecks.AssemblyInfoInputs.cache
+C:\_estudos\ExemploHealthChecks\ExemploHealthChecks\obj\Debug\netcoreapp2.2\ExemploHealthChecks.AssemblyInfo.cs
+C:\_estudos\ExemploHealthChecks\ExemploHealthChecks\bin\Debug\netcoreapp2.2\ExemploHealthChecks.deps.json
+C:\_estudos\ExemploHealthChecks\ExemploHealthChecks\bin\Debug\netcoreapp2.2\ExemploHealthChecks.runtimeconfig.json
+C:\_estudos\ExemploHealthChecks\ExemploHealthChecks\bin\Debug\netcoreapp2.2\ExemploHealthChecks.runtimeconfig.dev.json
+C:\_estudos\ExemploHealthChecks\ExemploHealthChecks\bin\Debug\netcoreapp2.2\ExemploHealthChecks.dll
+C:\_estudos\ExemploHealthChecks\ExemploHealthChecks\obj\Debug\netcoreapp2.2\ExemploHealthChecks.csprojAssemblyReference.cache
+C:\_estudos\ExemploHealthChecks\ExemploHealthChecks\obj\Debug\netcoreapp2.2\ExemploHealthChecks.RazorAssemblyInfo.cache
+C:\_estudos\ExemploHealthChecks\ExemploHealthChecks\obj\Debug\netcoreapp2.2\ExemploHealthChecks.RazorAssemblyInfo.cs
+C:\_estudos\ExemploHealthChecks\ExemploHealthChecks\obj\Debug\netcoreapp2.2\ExemploHealthChecks.RazorTargetAssemblyInfo.cache
+C:\_estudos\ExemploHealthChecks\ExemploHealthChecks\bin\Debug\netcoreapp2.2\ExemploHealthChecks.pdb
+C:\_estudos\ExemploHealthChecks\ExemploHealthChecks\obj\Debug\netcoreapp2.2\ExemploHealthChecks.dll
+C:\_estudos\ExemploHealthChecks\ExemploHealthChecks\obj\Debug\netcoreapp2.2\ExemploHealthChecks.pdb

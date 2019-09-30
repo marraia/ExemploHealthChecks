@@ -1,0 +1,22 @@
+services:
+  exemplohealthchecks:
+    build:
+      context: C:\_estudos\ExemploHealthChecks
+      dockerfile: ExemploHealthChecks/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: exemplohealthchecks
+    ports:
+    - published: 5555
+      target: 80
+  exemplohealthchecks2:
+    build:
+      context: C:\_estudos\ExemploHealthChecks
+      dockerfile: ExemploHealthChecks2/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: exemplohealthchecks2
+    ports:
+    - published: 6666
+      target: 80
+version: '3.4'

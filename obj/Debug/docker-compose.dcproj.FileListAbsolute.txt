@@ -1,0 +1,7 @@
+C:\_estudos\ExemploHealthChecks\bin\Debug\ExemploHealthChecks.dll
+C:\_estudos\ExemploHealthChecks\bin\Debug\ExemploHealthChecks2.dll
+C:\_estudos\ExemploHealthChecks\bin\Debug\ExemploHealthChecks.pdb
+C:\_estudos\ExemploHealthChecks\bin\Debug\ExemploHealthChecks2.pdb
+C:\_estudos\ExemploHealthChecks\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+C:\_estudos\ExemploHealthChecks\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\_estudos\ExemploHealthChecks\obj\Debug\docker-compose.dcproj.CopyComplete

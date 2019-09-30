@@ -1,0 +1,38 @@
+services:
+  exemplohealthchecks:
+    build:
+      context: C:\_estudos\ExemploHealthChecks
+      dockerfile: ExemploHealthChecks/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: exemplohealthchecks
+    ports:
+    - published: 5555
+      target: 80
+  exemplohealthchecks2:
+    build:
+      context: C:\_estudos\ExemploHealthChecks
+      dockerfile: ExemploHealthChecks2/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: exemplohealthchecks2
+    ports:
+    - published: 6666
+      target: 80
+  kafka:
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_CREATE_TOPICS: fila_pedido:1:1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    image: wurstmeister/kafka:0.10.2.0
+    ports:
+    - published: 9092
+      target: 9092
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock:rw
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+    - published: 2181
+      target: 2181
+version: '3.4'
